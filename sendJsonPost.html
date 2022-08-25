@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+  var xhr = new XMLHttpRequest();
+  var url = "http://127.0.0.1:8888";
+  xhr.open("POST", url);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      alert(xhr.responseText);
+      console.log(xhr.responseText);
+    }
+  };
+  var data = JSON.stringify({"from": "e2", "to": "h8"});
+  alert(data);
+  xhr.send(data);
+</script>
+</body>
+</html>
